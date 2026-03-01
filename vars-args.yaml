@@ -5,4 +5,5 @@
   - name: print course information
     ansible.builtin.debug:
       msg: "Course is {{ COURSE }}, Duration is {{ DURATION }}, Trainer is {{ TRAINER }}"
-      # we can also pass the variables from cli i.e., args
+      # we can also pass the variables from cli i.e., args using the below command
+      #  ansible-playbook -i inventory.ini vars-args.yaml -e "COURSE='DEVOPS WITH AWS'" -e "DURATION=120hrs" -e "TRAINER=SIVA"
