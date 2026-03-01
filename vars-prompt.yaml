@@ -4,10 +4,13 @@
   vars_prompt:
   - name: course
     prompt: Please enter course name
+    private: false #Ansible automatically, consider this as confidential information and doesn't display the data while we are enetring. We can mention this if it is not confidential data
   - name: Duration
     prompt: Please enter duration
+    private: false 
   - name: trainer
     prompt: Please enter trainer name
+    private: false 
   tasks:
   - name: print course information
     ansible.builtin.debug:
