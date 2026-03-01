@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   vars:
-    course= "Devops with AWS
+    course= "Devops with AWS"
     trainer= "siva kumar"
   tasks:
   - name: print local variables
