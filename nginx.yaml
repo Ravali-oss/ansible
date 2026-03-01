@@ -1,0 +1,14 @@
+#Here we are wriring the yaml script to install and run nginix in the server that is mentioned in the inventory.ini file
+- name: install and run nginx
+  hosts: web
+  become: yes #It becomes the root user
+  tasks:
+  - name: Install nginx
+    ansible.builtin.package: # We need to mention the module name here. Here package is heterogenous .i.e., if we provide dnf, it will get installed only in Linux servers. If we provide package, it will analyze the server OS and provide the commands related to thst server
+      name: nginx
+      state: present
+  - name: Run nginx
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
