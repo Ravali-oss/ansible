@@ -1,0 +1,9 @@
+- name: variables from files
+  hosts: local
+  connection: local
+  var_files: # We need to refer the file using this command
+  - vars.yaml # file name in which we have stored variables.
+  tasks:
+  - name: file variables
+    ansible.builtin.debug:
+      msg: "Course is:{{course}}, Duration is: {{duration}}, trainer is: {{trainer}}"
