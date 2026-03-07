@@ -1,0 +1,10 @@
+- name: Setup passwordless SSH
+  hosts: pwd
+  become: yes
+
+  tasks:
+    - name: Copy SSH public key to servers
+      ansible.posix.authorized_key:
+        user: ec2-user
+        state: present
+        key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
