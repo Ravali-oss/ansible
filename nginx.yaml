@@ -1,6 +1,6 @@
 #Here we are wriring the yaml script to install and run nginix in the server that is mentioned in the inventory.ini file
 - name: install and run nginx
-  hosts: web
+  hosts: pwd
   become: yes #It becomes the root user
   tasks:
   - name: Install nginx
